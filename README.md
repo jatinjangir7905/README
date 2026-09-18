@@ -170,8 +170,10 @@ computer-vision-projects/
 │
 └── harrys-cloak/
     └── projecto.py
+
 👨‍💻 Author
 Jatin
 B.Tech – Artificial Intelligence & Machine Learning
+
 ⭐ Project Purpose
 These projects were developed to explore practical applications of computer vision and demonstrate how traditional image-processing techniques can be combined with deep-learning-based object detection for real-time applications.
