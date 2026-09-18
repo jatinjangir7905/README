@@ -25,6 +25,7 @@ Configurable confidence and NMS thresholds
 The detector loads yolov5s.onnx and coco.names, with configurable camera and detection thresholds.
 Required files
 phone-pen-detector/
+
 ├── project.py
 ├── yolov5s.onnx
 └── coco.names
@@ -40,6 +41,7 @@ The source code uses OpenCV's DNN module to load the ONNX model and processes we
 A computer-vision implementation of an invisibility cloak effect using a blue cloth.
 The program first captures the background while the user is outside the camera frame. It then detects the blue color using an HSV mask and replaces the detected blue region with the previously captured background.
 Processing pipeline
+
 Webcam
    ↓
 Capture Background
@@ -63,6 +65,7 @@ The default HSV trackbar values are tuned for a blue cloth and can be adjusted w
 Required file
 harrys-cloak/
 └── projecto.py
+
 🛠️ Technologies Used
 Python 3
 OpenCV
@@ -72,6 +75,7 @@ ONNX
 Computer Vision
 Image Processing
 Real-Time Webcam Processing
+
 ⚙️ Installation
 Clone the repository:
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -79,6 +83,7 @@ cd YOUR-REPOSITORY
 Install the Python dependencies:
 pip install opencv-python numpy
 For the Phone & Pen Detector, make sure the YOLOv5 ONNX model and COCO class-name file are present in the same directory as project.py.
+
 ▶️ How to Run
 Phone & Pen Detector
 python project.py
@@ -112,6 +117,7 @@ Quit
 B
 Capture the background again
 The HSV values can also be adjusted using the trackbars in the bars window.
+
 🎯 Learning Objectives
 These projects demonstrate practical applications of:
 Object detection
@@ -124,10 +130,12 @@ Feature-based object detection
 Neural-network inference with ONNX
 Real-time video processing
 Webcam-based computer vision
+
 🔍 How the Phone Detector Works
 The YOLOv5 model produces object predictions from each webcam frame. The program calculates class confidence using objectness and class scores, filters detections using the confidence threshold, converts bounding boxes to the original frame coordinates, and applies NMS.
 For phones, the detected class label is checked for "phone" or "cell" before displaying the detection.
 Pens are detected separately using geometric/image-processing heuristics rather than the YOLO model.
+
 🪄 How Harry's Cloak Works
 The cloak project uses the HSV color space because hue, saturation, and value make color-based segmentation convenient.
 A binary mask is created for the selected blue range:
@@ -136,6 +144,7 @@ The mask is cleaned using median filtering and morphological opening/closing. Th
 The final image is produced by combining:
 The current frame everywhere except the blue cloth
 The captured background where the blue cloth is detected
+
 ⚠️ Limitations
 Phone & Pen Detector
 Detection quality depends on the YOLOv5 model and camera conditions.
@@ -148,6 +157,7 @@ Lighting changes can affect HSV segmentation.
 Other blue objects in the scene may also be detected.
 The background should remain relatively unchanged after capture.
 The effect works best with a stationary camera.
+
 🚀 Possible Future Improvements
 Train a custom YOLO model specifically for phones and pens.
 Add object tracking across video frames.
@@ -158,6 +168,7 @@ Add multiple color-cloak support.
 Improve background replacement using segmentation.
 Add automatic HSV calibration.
 Add GPU acceleration where supported.
+
 📂 Suggested Repository Structure
 computer-vision-projects/
 │
